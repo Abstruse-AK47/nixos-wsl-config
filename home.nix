@@ -9,6 +9,7 @@
 	    enableCompletion = true;
 	    autosuggestion.enable = true;
 	    syntaxHighlighting.enable = true;
+	    autocd = true;
 	
 	    shellAliases = {
 	      update = "sudo nixos-rebuild switch --flake .";
@@ -22,6 +23,9 @@
 	      path = "${config.xdg.dataHome}/zsh/history";
 	    };
 	  };	
+
+	programs.zoxide.enable = true;
+	programs.zoxide.enableZshIntegration = true;
 
 	programs.atuin = {
 		enable = true;
