@@ -57,21 +57,21 @@
 	    }
 	  ];
     	   initContent = ''
-    	     # disable sort when completing `git checkout`
-    	     zstyle ':completion:*:git-checkout:*' sort false
-    	     # set descriptions format to enable group support
-    	     # NOTE: don't use escape sequences here, fzf-tab will handle them
-    	     zstyle ':completion:*:descriptions' format '[%d]'
-    	     # set list-colors to enable filename colorizing
-    	     zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
-    	     # force zsh not to show completion menu, which allows fzf-tab to capture the input
-    	     zstyle ':completion:*' menu no
+    	     # # disable sort when completing `git checkout`
+    	     # zstyle ':completion:*:git-checkout:*' sort false
+    	     # # set descriptions format to enable group support
+    	     # # NOTE: don't use escape sequences here, fzf-tab will handle them
+    	     # zstyle ':completion:*:descriptions' format '[%d]'
+    	     # # set list-colors to enable filename colorizing
+    	     # zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+    	     # # force zsh not to show completion menu, which allows fzf-tab to capture the input
+    	     # zstyle ':completion:*' menu no
     	     
     	     # CUSTOMIZE FZF-TAB LOOK
     	     # This makes the window much larger (70% of screen) and adds a border
-    	     zstyle ':fzf-tab:*' fzf-flags '--height=70% --margin=1 --border=rounded --layout=reverse --info=inline'
+    	     zstyle ':fzf-tab:*' fzf-flags --height=70% --margin=1 --border=rounded --layout=reverse --info=inline
     	     
-    	     # preview directory's content with eza when completing cd
+    	     # # preview directory's content with eza when completing cd
     	     zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
     	   '';
 	};
