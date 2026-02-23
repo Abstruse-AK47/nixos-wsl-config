@@ -82,6 +82,7 @@
 		yazi
 		fzf
 		bat
+		tmux
 	(pkgs.writeShellApplication {
 	  name = "ns";
 	  runtimeInputs = with pkgs; [
