@@ -23,6 +23,18 @@
 	    };
 	  };	
 
+	programs.atuin = {
+		enable = true;
+		enableBashIntegration = true;
+		enableZshIntegraion = true;
+
+		settings = {
+			auto_sync = true;
+			sync_frequency = "5m";
+			search_mode = "fuzzy";
+			filter_mode = "host";
+			};
+		};
 	programs.oh-my-posh = {
     	enable = true;
     	
