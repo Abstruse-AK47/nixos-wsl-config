@@ -26,7 +26,7 @@
 	programs.atuin = {
 		enable = true;
 		enableBashIntegration = true;
-		enableZshIntegraion = true;
+		enableZshIntegration = true;
 
 		settings = {
 			auto_sync = true;
