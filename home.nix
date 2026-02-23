@@ -4,6 +4,29 @@
 	home.username="nixos";
 	home.homeDirectory = "/home/nixos";
 	home.stateVersion = "25.05";
+  	home.packages = with pkgs; [
+		neovim
+		git 
+		cudaPackages.cudatoolkit
+		wget
+		eza
+		pciutils
+		yazi
+		fzf
+		bat
+		tmux
+	(pkgs.writeShellApplication {
+	  name = "ns";
+	  runtimeInputs = with pkgs; [
+	    fzf
+	    nix-search-tv
+	  ];
+	  text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
+	}		)
+	];
+
+	# Programs
+
 	programs.zsh = {
 	    enable = true;
 	    enableCompletion = true;
@@ -22,8 +45,18 @@
 	      size = 10000;
 	      path = "${config.xdg.dataHome}/zsh/history";
 	    };
-	  };	
-
+	   plugins = [
+	    {
+	      name = "fzf-tab";
+	      src = pkgs.fetchFromGitHub {
+	        owner = "Aloxaf";
+	        repo = "fzf-tab";
+	        rev = "v1.1.2"; # Check for the latest version
+	        sha256 = "sha256-Qv8zAiMtrr67CbLRrFjGaPzFZcOiMVEFLg1Z+N6VMhg=";
+	      };
+	    }
+	  ];
+	};
 	programs.zoxide.enable = true;
 	programs.zoxide.enableZshIntegration = true;
 
@@ -76,26 +109,6 @@
 	};
 	        
 
-  	home.packages = with pkgs; [
-		neovim
-		git 
-		cudaPackages.cudatoolkit
-		wget
-		eza
-		pciutils
-		yazi
-		fzf
-		bat
-		tmux
-	(pkgs.writeShellApplication {
-	  name = "ns";
-	  runtimeInputs = with pkgs; [
-	    fzf
-	    nix-search-tv
-	  ];
-	  text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
-	}		)
-	];
 	programs.fzf = {
 	  enable = true;
 	  enableBashIntegration = true;
