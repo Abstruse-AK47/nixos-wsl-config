@@ -19,7 +19,7 @@
     "fzf-tab": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-3pew02Y7JgvCzPIITMGQwev6kZjREVoKS0RghvBV+Xk=",
+        "narHash": "sha256-wy1fO9UBjrfcrwndDHy6z0e614MZTTPXGa/ztFOLbo4=",
         "type": "file",
         "url": "https://github.com/Aloxaf/fzf-tab"
       },
@@ -112,18 +112,14 @@
     "tmux-fzf-links": {
       "flake": false,
       "locked": {
-        "lastModified": 1771705733,
-        "narHash": "sha256-UgJa7I9AmrOdtK1RDIbdBfHl7OU5Cmx51wncWRPml18=",
-        "owner": "alberti42",
-        "repo": "tmux-fzf-links",
-        "rev": "2ab179b2a1a1326eb13efcc77f24de1e97449523",
-        "type": "github"
+        "path": "github.com/wfxr/tmux-fzf-url",
+        "type": "path"
       },
       "original": {
-        "owner": "alberti42",
-        "repo": "tmux-fzf-links",
-        "type": "github"
-      }
+        "path": "github.com/wfxr/tmux-fzf-url",
+        "type": "path"
+      },
+      "parent": []
     }
   },
   "root": "root",

@@ -10,7 +10,7 @@
 	url = "github:nix-community/home-manager";
 	inputs.nixpkgs.follows = "nixpkgs";
 	};
-    tmux-fzf-links = {
+    tmux-fzf-url = {
       url = "github.com/wfxr/tmux-fzf-url";
       flake = false;
     };    
