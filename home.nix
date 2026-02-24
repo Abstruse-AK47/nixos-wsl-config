@@ -20,7 +20,9 @@
 		pciutils
 		yazi
 		fzf
+		gawk
 		bat
+		xdg-utils
 	(pkgs.writeShellApplication {
 	  name = "ns";
 	  runtimeInputs = with pkgs; [

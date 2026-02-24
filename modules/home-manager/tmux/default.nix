@@ -82,8 +82,7 @@ in
       set -g detach-on-destroy off 
       set -g renumber-windows on 
       
-      # Optional: Uncomment if you want the status bar at the top
-      # set -g status-position top
+      set -sg escape-time 10
 
     '';
 
@@ -106,9 +105,8 @@ in
 	  {
              plugin = tmux-fzf-links;
              extraConfig = ''
-               set -g @fzf-url-bind 'u'
-               set -g @fzf-url-history-limit '100'
-               set -g @fzf-url-fzf-options '-w 50% -h 50% --multi -0 --no-preview --no-border'
+               set -g @fzf-links-bind 'u'
+               # set -g @fzf-links-fzf-display-options '-w 50% -h 50% --multi -0 --no-preview --no-border'
 
              '';
       	   }
