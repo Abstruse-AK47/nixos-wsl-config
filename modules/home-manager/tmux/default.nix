@@ -1,5 +1,19 @@
 {config, pkgs, ... }:
 
+let
+  # Define the custom plugin locally in this file
+  tmux-fzf-links = pkgs.tmuxPlugins.mkTmuxPlugin {
+    pluginName = "tmux-fzf-links";
+    version = "latest";
+    src = pkgs.fetchFromGitHub {
+      owner = "alberti42";
+      repo = "tmux-fzf-links";
+      rev = "master";
+      # Nix will complain about this hash; replace it with the one Nix gives you
+      sha256 = "sha256-UgJa7I9AmrOdtK1RDIbdBfHl7OU5Cmx51wncWRPml18="; 
+    };
+  };
+in
 {
   programs.tmux = {
     enable = true;
@@ -77,12 +91,12 @@
           vim-tmux-navigator
           resurrect
           continuum
+          # {
+          #   plugin = themepack;
+          #   extraConfig = "set -g @themepack 'powerline/default/cyan'"; # Choose your theme here
+          # }
           {
-            plugin = themepack;
-            extraConfig = "set -g @themepack 'basic'"; # Choose your theme here
-          }
-          {
-            plugin = sessionx;
+            plugin = tmux-sessionx;
             extraConfig = ''
               set -g @sessionx-bind 'o'
               set -g @sessionx-window-height '85%'
@@ -90,10 +104,9 @@
             '';
           }
 	  {
-             plugin = fzf-url;
+             plugin = tmux-fzf-links;
              extraConfig = ''
-               # Custom key binding to open the URL selector (default is 'u')
-               set -g @fzf-url-bind 'u'
+               set -g @fzf-url-bind 'U'
                set -g @fzf-url-history-limit '100'
                set -g @fzf-url-fzf-options '-w 50% -h 50% --multi -0 --no-preview --no-border'
 
