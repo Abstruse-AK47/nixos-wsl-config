@@ -24,6 +24,7 @@
 		bat
 		xdg-utils
 		wl-clipboard
+		wslu
 	(pkgs.writeShellApplication {
 	  name = "ns";
 	  runtimeInputs = with pkgs; [
