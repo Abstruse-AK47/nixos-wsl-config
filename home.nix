@@ -4,7 +4,7 @@
 
 	imports = [
 		./modules/home-manager/zsh/default.nix
-		./modules/home-manader/fzf/default.nix
+		./modules/home-manager/fzf/default.nix
 		./modules/home-manager/git/default.nix
 		];
 	home.username="nixos";
