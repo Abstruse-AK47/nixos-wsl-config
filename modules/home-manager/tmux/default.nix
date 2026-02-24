@@ -1,19 +1,19 @@
 {config,inputs, pkgs, ... }:
 
-let
-  # Define the custom plugin locally in this file
-  tmux-fzf-url = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tmux-fzf-url";
-    version = "v1.4.13";
-    # src = pkgs.fetchFromGitHub {
-    #   owner = "alberti42";
-    #   repo = "tmux-fzf-links";
-    #   rev = "v1.4.13";
-    #   sha256 = "sha256-UgJa7I9AmrOdtK1RDIbdBfHl7OU5Cmx51wncWRPml18="; 
-    # };
-    src = inputs.tmux-fzf-url; 
-  };
-in
+# let
+#   # Define the custom plugin locally in this file
+#   tmux-fzf-url = pkgs.tmuxPlugins.mkTmuxPlugin {
+#     pluginName = "tmux-fzf-url";
+#     version = "v1.4.13";
+#     # src = pkgs.fetchFromGitHub {
+#     #   owner = "alberti42";
+#     #   repo = "tmux-fzf-links";
+#     #   rev = "v1.4.13";
+#     #   sha256 = "sha256-UgJa7I9AmrOdtK1RDIbdBfHl7OU5Cmx51wncWRPml18="; 
+#     # };
+#     src = inputs.tmux-fzf-url; 
+#   };
+# in
 {
   programs.tmux = {
     enable = true;
@@ -82,6 +82,7 @@ in
       
       set -sg escape-time 10
 
+   
 
     '';
 
@@ -102,13 +103,13 @@ in
             '';
           }
 	  {
-             plugin = tmux-fzf-url;
-             extraConfig = ''
-               set-g @fzf-url-key 'x'
-	       set-g @fzf-url-history-limit "100"
-
-             '';
-      	   }
+	   plugin = fzf-tmux-url;
+	   extraConfig = ''   
+	   	set -g @urlview-key 'u'
+      	   	set -g @fzf-url-history-limit '100'
+           	set -g @fzf-url-fzf-options '-w 50% -h 50% --multi -0 --no-preview --no-border'
+		'';
+	   }
         ];
     
   };

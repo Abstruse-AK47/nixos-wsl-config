@@ -20,18 +20,25 @@
 	      size = 10000;
 	      path = "${config.xdg.dataHome}/zsh/history";
 	    };
-	   plugins = [
-	    {
-	      name = "fzf-tab";
-	      # src = pkgs.fetchFromGitHub {
-	      #   owner = "Aloxaf";
-	      #   repo = "fzf-tab";
-	      #   rev = "v1.1.2"; # Check for the latest version
-	      #   sha256 = "sha256-Qv8zAiMtrr67CbLRrFjGaPzFZcOiMVEFLg1Z+N6VMhg=";
-	      # };
-	      src = inputs.fzf-tab;
-	    }
-	  ];
+	    plugins = [
+	          {
+	            name = "fzf-tab";
+	            src = pkgs.zsh-fzf-tab;
+	            file = "share/fzf-tab/fzf-tab.plugin.zsh";
+	          }
+	        ];
+	   # plugins = [
+	   #  {
+	   #    name = "fzf-tab";
+	   #    # src = pkgs.fetchFromGitHub {
+	   #    #   owner = "Aloxaf";
+	   #    #   repo = "fzf-tab";
+	   #    #   rev = "v1.1.2"; # Check for the latest version
+	   #    #   sha256 = "sha256-Qv8zAiMtrr67CbLRrFjGaPzFZcOiMVEFLg1Z+N6VMhg=";
+	   #    # };
+	   #    src = inputs.fzf-tab;
+	   #  }
+	  # ];
     	   initContent = ''
     	      # disable sort when completing `git checkout`
     	      zstyle ':completion:*:git-checkout:*' sort false

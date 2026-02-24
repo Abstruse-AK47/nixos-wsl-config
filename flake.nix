@@ -10,14 +10,6 @@
 	url = "github:nix-community/home-manager";
 	inputs.nixpkgs.follows = "nixpkgs";
 	};
-    tmux-fzf-url = {
-      url = "github.com/wfxr/tmux-fzf-url";
-      flake = false;
-    };    
-    fzf-tab = {
-    	url = "https://github.com/Aloxaf/fzf-tab";
-	flake = false;
-   };
   };
 	
   outputs = { self, nixpkgs,home-manager, nixos-wsl, ... } @ inputs: {

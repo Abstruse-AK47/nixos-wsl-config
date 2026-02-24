@@ -16,18 +16,6 @@
         "type": "github"
       }
     },
-    "fzf-tab": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-fFVQFKJU3mbbgUSzi137mCJG6eG74nZbKX/B9HZaL7w=",
-        "type": "file",
-        "url": "https://github.com/Aloxaf/fzf-tab"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/Aloxaf/fzf-tab"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -102,24 +90,10 @@
     },
     "root": {
       "inputs": {
-        "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_2",
-        "tmux-fzf-url": "tmux-fzf-url"
+        "nixpkgs": "nixpkgs_2"
       }
-    },
-    "tmux-fzf-url": {
-      "flake": false,
-      "locked": {
-        "path": "github.com/wfxr/tmux-fzf-url",
-        "type": "path"
-      },
-      "original": {
-        "path": "github.com/wfxr/tmux-fzf-url",
-        "type": "path"
-      },
-      "parent": []
     }
   },
   "root": "root",
