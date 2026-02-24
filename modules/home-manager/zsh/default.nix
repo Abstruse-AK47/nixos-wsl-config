@@ -1,4 +1,4 @@
-{config,pkgs, ...}:
+{config,inputs,pkgs, ...}:
 
 {
 	# Main zsh config with plugins
@@ -23,12 +23,13 @@
 	   plugins = [
 	    {
 	      name = "fzf-tab";
-	      src = pkgs.fetchFromGitHub {
-	        owner = "Aloxaf";
-	        repo = "fzf-tab";
-	        rev = "v1.1.2"; # Check for the latest version
-	        sha256 = "sha256-Qv8zAiMtrr67CbLRrFjGaPzFZcOiMVEFLg1Z+N6VMhg=";
-	      };
+	      # src = pkgs.fetchFromGitHub {
+	      #   owner = "Aloxaf";
+	      #   repo = "fzf-tab";
+	      #   rev = "v1.1.2"; # Check for the latest version
+	      #   sha256 = "sha256-Qv8zAiMtrr67CbLRrFjGaPzFZcOiMVEFLg1Z+N6VMhg=";
+	      # };
+	      src = inputs.fzf-tab;
 	    }
 	  ];
     	   initContent = ''

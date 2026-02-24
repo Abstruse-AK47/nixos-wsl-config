@@ -19,7 +19,7 @@
     "fzf-tab": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-92qzbLZcmJYkc9yB3P89aKuaJS6ZxqzJZ5jzaGULJMc=",
+        "narHash": "sha256-8knY4CoCVMRltBNuscY9wQAzszCntIBB4lebmsyBy+g=",
         "type": "file",
         "url": "https://github.com/Aloxaf/fzf-tab"
       },
