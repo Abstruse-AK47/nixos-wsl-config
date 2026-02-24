@@ -1,17 +1,17 @@
-{config, pkgs, ... }:
+{config,inputs, pkgs, ... }:
 
 let
   # Define the custom plugin locally in this file
   tmux-fzf-links = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "tmux-fzf-links";
-    version = "latest";
-    src = pkgs.fetchFromGitHub {
-      owner = "alberti42";
-      repo = "tmux-fzf-links";
-      rev = "master";
-      # Nix will complain about this hash; replace it with the one Nix gives you
-      sha256 = "sha256-UgJa7I9AmrOdtK1RDIbdBfHl7OU5Cmx51wncWRPml18="; 
-    };
+    version = "v1.4.13";
+    # src = pkgs.fetchFromGitHub {
+    #   owner = "alberti42";
+    #   repo = "tmux-fzf-links";
+    #   rev = "v1.4.13";
+    #   sha256 = "sha256-UgJa7I9AmrOdtK1RDIbdBfHl7OU5Cmx51wncWRPml18="; 
+    # };
+    src = inputs.tmux-fzf-links; 
   };
 in
 {
@@ -107,7 +107,6 @@ in
              extraConfig = ''
                set -g @fzf-links-key u
 	       set -g @fzf-links-history-lines "0"
-               # set -g @fzf-links-fzf-display-options '-w 50% -h 50% --multi -0 --no-preview --no-border'
 
              '';
       	   }

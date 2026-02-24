@@ -9,7 +9,11 @@
     home-manager = {
 	url = "github:nix-community/home-manager";
 	inputs.nixpkgs.follows = "nixpkgs";
-    };
+	};
+    tmux-fzf-links = {
+      url = "github:alberti42/tmux-fzf-links";
+      flake = false;
+    };    
   };
 	
   outputs = { self, nixpkgs,home-manager, nixos-wsl, ... }: {

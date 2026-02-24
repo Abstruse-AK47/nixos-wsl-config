@@ -92,7 +92,24 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "tmux-fzf-links": "tmux-fzf-links"
+      }
+    },
+    "tmux-fzf-links": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771705733,
+        "narHash": "sha256-UgJa7I9AmrOdtK1RDIbdBfHl7OU5Cmx51wncWRPml18=",
+        "owner": "alberti42",
+        "repo": "tmux-fzf-links",
+        "rev": "2ab179b2a1a1326eb13efcc77f24de1e97449523",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alberti42",
+        "repo": "tmux-fzf-links",
+        "type": "github"
       }
     }
   },
