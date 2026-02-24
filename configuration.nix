@@ -10,6 +10,11 @@
   wsl.defaultUser = "nixos"; 
   wsl.useWindowsDriver = true;
 
+  systemd.services."status-check" = {
+  	script = "echo 'Systemd is running'";
+	wantedBy = [ "multi-user.target"] ;
+	};
+
   # 2. The "Must-Haves" for CUDA
   nixpkgs.config.allowUnfree = true;
 
