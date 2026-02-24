@@ -90,6 +90,7 @@
           vim-tmux-navigator
           resurrect
           continuum
+	  onedark-theme
           # {
           #   plugin = themepack;
           #   extraConfig = "set -g @themepack 'powerline/default/cyan'"; # Choose your theme here
