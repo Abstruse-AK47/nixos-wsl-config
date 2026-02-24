@@ -104,8 +104,8 @@ in
 	  {
              plugin = tmux-fzf-links;
              extraConfig = ''
-               set-options -g @fzf-links-key u
-	       set-options -g @fzf-links-history-lines "0"
+               set-option -g @fzf-links-key u
+	       set-option -g @fzf-links-history-lines "0"
 
              '';
       	   }
