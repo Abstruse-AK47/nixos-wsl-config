@@ -1,7 +1,7 @@
 {config,pkgs, ...}:
 
 {
-
+	# Main zsh config with plugins
 	programs.zsh = {
 	    enable = true;
 	    enableCompletion = true;
@@ -32,15 +32,15 @@
 	    }
 	  ];
     	   initContent = ''
-    	     # # disable sort when completing `git checkout`
-    	     # zstyle ':completion:*:git-checkout:*' sort false
-    	     # # set descriptions format to enable group support
-    	     # # NOTE: don't use escape sequences here, fzf-tab will handle them
-    	     # zstyle ':completion:*:descriptions' format '[%d]'
-    	     # # set list-colors to enable filename colorizing
-    	     # zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
-    	     # # force zsh not to show completion menu, which allows fzf-tab to capture the input
-    	     # zstyle ':completion:*' menu no
+    	      # disable sort when completing `git checkout`
+    	      zstyle ':completion:*:git-checkout:*' sort false
+    	      # set descriptions format to enable group support
+    	      # NOTE: don't use escape sequences here, fzf-tab will handle them
+    	      zstyle ':completion:*:descriptions' format '[%d]'
+    	      # set list-colors to enable filename colorizing
+    	      zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+    	      # force zsh not to show completion menu, which allows fzf-tab to capture the input
+    	      zstyle ':completion:*' menu no
     	     
     	     # CUSTOMIZE FZF-TAB LOOK
     	     # This makes the window much larger (70% of screen) and adds a border
@@ -50,9 +50,18 @@
     	     zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
     	   '';
 	};
-	programs.zoxide.enable = true;
-	programs.zoxide.enableZshIntegration = true;
-
+	
+	# Zoxide - cd with gps
+	programs.zoxide = {
+		enable = true;
+		enableZshIntegration = true;
+		enableBashIntegration = true;
+		options = [
+			"--cmd cd"
+		];
+		};
+	
+	# Atuin for better shell history managment
 	programs.atuin = {
 		enable = true;
 		enableBashIntegration = true;
@@ -65,11 +74,11 @@
 			filter_mode = "host";
 			};
 		};
+
+	# oh-my-posh for theme
 	programs.oh-my-posh = {
     	enable = true;
     	
-    	# You can choose a built-in theme or point to a local file
-    	# useTheme = "jfeliva"; 
     	
     	# If you want to use a specific JSON theme file from your flake or path:
     	settings = builtins.fromJSON (builtins.readFile ./themes/half-life.omp.json);
