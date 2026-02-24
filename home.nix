@@ -23,6 +23,7 @@
 		gawk
 		bat
 		xdg-utils
+		wl-copy
 	(pkgs.writeShellApplication {
 	  name = "ns";
 	  runtimeInputs = with pkgs; [
