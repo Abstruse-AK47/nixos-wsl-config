@@ -12,7 +12,7 @@
 	    shellAliases = {
 	      update = "sudo nixos-rebuild switch --flake .";
 	      ll = "ls -l";
-	      z = "eza --icons=always -a";
+	      z = "eza --icons=always -a --git";
 	      garbage = "nix-collect-garbage -d";
 	    };
 	
