@@ -105,7 +105,7 @@ in
 	  {
              plugin = tmux-fzf-links;
              extraConfig = ''
-               set -g @fzf-links-bind 'u'
+               set -g @fzf-links-key C-h
                # set -g @fzf-links-fzf-display-options '-w 50% -h 50% --multi -0 --no-preview --no-border'
 
              '';
