@@ -19,7 +19,7 @@
     "fzf-tab": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-wy1fO9UBjrfcrwndDHy6z0e614MZTTPXGa/ztFOLbo4=",
+        "narHash": "sha256-hEb2xgIUSe2TDSAzK5HMldXUfnjmdfKkSu2vMPn0+sE=",
         "type": "file",
         "url": "https://github.com/Aloxaf/fzf-tab"
       },
@@ -106,10 +106,10 @@
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
-        "tmux-fzf-links": "tmux-fzf-links"
+        "tmux-fzf-url": "tmux-fzf-url"
       }
     },
-    "tmux-fzf-links": {
+    "tmux-fzf-url": {
       "flake": false,
       "locked": {
         "path": "github.com/wfxr/tmux-fzf-url",
