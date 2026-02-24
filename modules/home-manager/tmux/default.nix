@@ -2,7 +2,7 @@
 
 let
   # Define the custom plugin locally in this file
-  tmux-fzf-links = pkgs.tmuxPlugins.mkTmuxPlugin {
+  tmux-fzf-url = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "tmux-fzf-url";
     version = "v1.4.13";
     # src = pkgs.fetchFromGitHub {
