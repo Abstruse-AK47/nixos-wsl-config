@@ -106,7 +106,7 @@ in
 	  {
              plugin = tmux-fzf-links;
              extraConfig = ''
-               set -g @fzf-url-bind 'U'
+               set -g @fzf-url-bind 'u'
                set -g @fzf-url-history-limit '100'
                set -g @fzf-url-fzf-options '-w 50% -h 50% --multi -0 --no-preview --no-border'
 
