@@ -10,7 +10,8 @@
 	    autocd = true;
 	
 	    shellAliases = {
-	      update = "nix flake update && sudo nixos-rebuild switch --flake .";
+	      rebuild = "sudo nixos-rebuild switch --flake .";
+	      flake = "nix flake update";
 	      ll = "ls -l";
 	      z = "eza --icons=always -a --git";
 	      garbage = "nix-collect-garbage -d";
