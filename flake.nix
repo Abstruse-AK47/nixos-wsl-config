@@ -16,7 +16,7 @@
     };    
   };
 	
-  outputs = { self, nixpkgs,home-manager, nixos-wsl, ... }: {
+  outputs = { self, nixpkgs,home-manager, nixos-wsl, ... } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -27,6 +27,7 @@
 	   home-manager = {
 	   	useGlobalPkgs = true;
 		useUserPackages = true;
+		extraSpecialArgs = { inherit inputs; };
 		users.nixos = import ./home.nix;
 		backupFileExtension = "backup";
 	   };
