@@ -22,6 +22,8 @@
     isNormalUser = true;
     shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true;
   
 
   # zramSwap.enable = true;

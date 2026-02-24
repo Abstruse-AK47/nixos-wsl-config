@@ -11,7 +11,7 @@
 	inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
+	
   outputs = { self, nixpkgs,home-manager, nixos-wsl, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
