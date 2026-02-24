@@ -3,7 +3,7 @@
 let
   # Define the custom plugin locally in this file
   tmux-fzf-links = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tmux-fzf-links";
+    pluginName = "tmux-fzf-url";
     version = "v1.4.13";
     # src = pkgs.fetchFromGitHub {
     #   owner = "alberti42";
@@ -11,7 +11,7 @@ let
     #   rev = "v1.4.13";
     #   sha256 = "sha256-UgJa7I9AmrOdtK1RDIbdBfHl7OU5Cmx51wncWRPml18="; 
     # };
-    src = inputs.tmux-fzf-links; 
+    src = inputs.tmux-fzf-url; 
   };
 in
 {
@@ -102,10 +102,10 @@ in
             '';
           }
 	  {
-             plugin = tmux-fzf-links;
+             plugin = tmux-fzf-url;
              extraConfig = ''
-               set-option -g @fzf-links-key u
-	       set-option -g @fzf-links-history-lines "0"
+               set-g @fzf-url-key 'x'
+	       set-g @fzf-url-history-limit "100"
 
              '';
       	   }

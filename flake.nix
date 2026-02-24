@@ -11,7 +11,7 @@
 	inputs.nixpkgs.follows = "nixpkgs";
 	};
     tmux-fzf-links = {
-      url = "github:alberti42/tmux-fzf-links";
+      url = "github.com/wfxr/tmux-fzf-url";
       flake = false;
     };    
     fzf-tab = {
