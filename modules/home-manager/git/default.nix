@@ -16,6 +16,10 @@
 			email = "ayan344kapil@gmail.com";
 		};
 
+		extraConfig = {
+			credential.helper = "store";
+			};
+
 		init = {
 			defaultBranch = "main";
 			};
