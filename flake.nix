@@ -14,6 +14,10 @@
       url = "github:alberti42/tmux-fzf-links";
       flake = false;
     };    
+    fzf-tab = {
+    	url = "https://github.com/Aloxaf/fzf-tab";
+	flake = false;
+   };
   };
 	
   outputs = { self, nixpkgs,home-manager, nixos-wsl, ... } @ inputs: {

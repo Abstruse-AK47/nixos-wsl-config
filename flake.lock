@@ -16,6 +16,18 @@
         "type": "github"
       }
     },
+    "fzf-tab": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-92qzbLZcmJYkc9yB3P89aKuaJS6ZxqzJZ5jzaGULJMc=",
+        "type": "file",
+        "url": "https://github.com/Aloxaf/fzf-tab"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/Aloxaf/fzf-tab"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -90,6 +102,7 @@
     },
     "root": {
       "inputs": {
+        "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
