@@ -42,8 +42,6 @@ in
       
       # Split panes using | and -
       bind | split-window -h
-      bind - split-window -v
-      unbind '"'
       unbind %
       bind -r j resize-pane -D 5
       bind -r k resize-pane -U 5
@@ -83,6 +81,7 @@ in
       set -g renumber-windows on 
       
       set -sg escape-time 10
+
 
     '';
 
