@@ -226,5 +226,4 @@
       { mode = "n"; key = "<leader>fn"; action = "<cmd>Telescope noice<CR>"; options.desc = "Find Notifications (Noice)"; }
       { mode = "n"; key = "<leader>nd"; action = "<cmd>NoiceDismiss<CR>"; options.desc = "Dismiss Noice Message"; }
     ];  
-  };
 }
