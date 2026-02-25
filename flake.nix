@@ -29,7 +29,7 @@
 		    useUserPackages = true;
 		    extraSpecialArgs = { inherit inputs; };
 		    users.nixos = { 
-            import = [ 
+            imports = [ 
                 inputs.nixvim.homeModules.nixvim
                 ./home.nix
                 ];
