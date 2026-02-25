@@ -48,7 +48,7 @@
 				"PreProc",
 				"Underlined",
 				"Todo",
-				"String"
+				"String",
 				"Function",
 				"Conditional",
 				"Repeat",
