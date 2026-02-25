@@ -34,23 +34,45 @@
         enableTelescope = true;
       };
 
-      notify.enable = true;
-
       noice = {
         enable = true;
-        backgroundColor = "#000000";
-        fps = 60;
-        render = "minimal";
-        stages = "fade";
-        timeout = 2000;
-        settings.presets = {
-          bottom_search = true;
-          command_palette = true;
-          long_message_to_split = true;
+        settings = {
+          presets = {
+            bottom_search = false; # Setting this to false keeps search in the middle
+            command_palette = true; # Centered HUD style
+            long_message_to_split = true;
+          };
+          # This is the "Secret Sauce" to center the bar
+          views = {
+            cmdline_popup = {
+              position = {
+                row = "40%"; # Centered vertically
+                col = "50%"; # Centered horizontally
+              };
+              size = {
+                width = 60;
+                height = "auto";
+              };
+            };
+            popupmenu = {
+              relative = "editor";
+              position = {
+                row = "53%"; # Just below the command bar
+                col = "50%";
+              };
+              size = {
+                width = 60;
+                height = 10;
+              };
+              border = {
+                style = "rounded";
+                padding = [ 0 1 ];
+              };
+            };
+          };
         };
-        settings.top_down = true;
-      };
-      
+      }; 
+
       mini = {
       enable = true;
       modules.icons = {};
@@ -83,14 +105,14 @@
 
     keymaps = [
       { mode = "n"; key = "<leader>it"; action = ":lua ToggleTabLine()<CR>"; }
-      { mode = "n"; key = "<leader>a";  action = ":lua require('harpoon.mark').add_file()<CR>"; }
-      { mode = "n"; key = "<C-e>";     action = ":lua require('harpoon.ui').toggle_quick_menu()<CR>"; }
+      { mode = "n"; key = "<leader>a"; action = ''<cmd>lua require("harpoon"):list():add()<cr>''; options.desc = "Harpoon: Add file"; }
+      { mode = "n"; key = "<C-e>"; action = ''<cmd>lua local harpoon = require("harpoon"); harpoon.ui:toggle_quick_menu(harpoon:list())<cr>''; options.desc = "Harpoon: Quick Menu"; }
       { mode = "n"; key = "<leader>d";  action = ":lua vim.diagnostic.open_float()<CR>"; options = { silent = true; desc = "Line Diagnostics"; }; }
       { mode = "n"; key = "<leader>D";  action = ":Telescope diagnostics bufnr=0<CR>"; options = { silent = true; desc = "Buffer Diagnostics"; }; }
       { mode = "n"; key = "<leader>ff"; action = ":Telescope find_files<CR>"; options.desc = "Find Files"; }
       { mode = "n"; key = "<leader>fg"; action = ":Telescope live_grep<CR>"; options.desc = "Live Grep"; } 
       { mode = "n"; key = "<leader>fo"; action = ":Telescope oldfiles<CR>"; options.desc = "Recent Files"; }
-      { mode = "n"; key = "<leader>fw"; action = ":Telescope grep_string<CR>"; options.desc = "Find word under cursor"; }
+      { mode = "n"; key = "<leader>fc"; action = ":Telescope grep_string<CR>"; options.desc = "Find word under cursor"; }
     ];  
   };
 }
