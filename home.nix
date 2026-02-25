@@ -27,6 +27,7 @@
 		wslu
     ripgrep
     lazygit
+    fd
 	(pkgs.writeShellApplication {
 	  name = "ns";
 	  runtimeInputs = with pkgs; [
