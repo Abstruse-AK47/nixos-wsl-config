@@ -50,9 +50,9 @@
           };
           
           # Explicitly load FZF as the picker
-          pickers = {
-            find_files.theme = "dropdown"; # Optional: makes it look even more minimal
-          };
+          # pickers = {
+          #   find_files.theme = "dropdown"; # Optional: makes it look even more minimal
+          # };
         };
       };
 

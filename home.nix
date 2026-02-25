@@ -25,6 +25,7 @@
 		xdg-utils
 		wl-clipboard
 		wslu
+    ripgrep
 	(pkgs.writeShellApplication {
 	  name = "ns";
 	  runtimeInputs = with pkgs; [
