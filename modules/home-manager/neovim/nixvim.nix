@@ -34,7 +34,7 @@
       treesitter = {
           enable = true;
           # Use the pre-packaged grammars from Nixpkgs
-          package = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+          nixGrammer = true;
           settings = {
             highlight.enable = true;
             indent.enable = true;
