@@ -202,7 +202,6 @@
           pyright.enable = true;
         };
       };
-    };
 
     # You can still keep your custom Lua functions if needed
     extraConfigLua = ''
@@ -226,4 +225,5 @@
       { mode = "n"; key = "<leader>fn"; action = "<cmd>Telescope noice<CR>"; options.desc = "Find Notifications (Noice)"; }
       { mode = "n"; key = "<leader>nd"; action = "<cmd>NoiceDismiss<CR>"; options.desc = "Dismiss Noice Message"; }
     ];  
+  };
 }
