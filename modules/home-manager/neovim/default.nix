@@ -29,9 +29,9 @@
 
 		  function ToggleTabLine()
 		  	if vim.o.showtabline == 0 then
-				vim.o.showtabline == 2
+				vim.o.showtabline = 2
 			else
-				vim.o.showtabline == 0
+				vim.o.showtabline = 0
 			end
 		  end
 		  vim.api.nvim_set_keymap("n", "<leader>it", ":lua ToggelTabLine()<CR>", {noremap = true, silent = true})
