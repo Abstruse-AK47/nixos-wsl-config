@@ -22,17 +22,54 @@
 
     # Plugins (NixVim handles the setups automatically)
     plugins = {
-
-      treesitter.enable = true;
+      # Helper plugin to bridge LSP and CMP
+      cmp-nvim-lsp.enable = true;
+      cmp-path.enable = true;
+      cmp-buffer.enable = true;
       nvim-autopairs.enable = true;
       indent-blankline.enable = true;
       tmux-navigator.enable = true;
+
+
+      treesitter = {
+          enable = true;
+          # Use the pre-packaged grammars from Nixpkgs
+          package = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+          settings = {
+            highlight.enable = true;
+            indent.enable = true;
+          };
+      };
+      none-ls =  {
+        enable = true;
+        sources = {
+          diagnostics = {
+            # Nix linter
+            statix.enable = true;
+            
+            # Python linter (replaces the older flake8/pylint)
+            ruff.enable = true; 
+
+            # Shell script linter (if you use bash/sh)
+            shellcheck.enable = true;
+          };
+          
+          # Optional: Add formatting here too
+          formatting = {
+            alejandra.enable = true; # Nix formatter
+            ruff.enable = true;      # Python formatter
+          };
+        };
+
       telescope = {
         enable = true;
-        
+          
         # 1. Enable FZF extension
-        extensions.fzf-native.enable = true;
-      
+        extensions = {
+          fzf-native.enable = true;
+          noice.enable = true;
+        }
+        
         # 2. Configure Key Mappings and FZF behavior
         settings = {
           defaults = {
@@ -55,7 +92,28 @@
           # };
         };
       };
-
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+        settings = {
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "path"; }
+            { name = "buffer"; }
+            { name = "cmdline"; }
+          ];
+          mapping = {
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<Tab>" = "cmp.mapping.confirm({ select = true })";
+            "<C-j>" = "cmp.mapping.select_next_item()";
+            "<C-k>" = "cmp.mapping.select_prev_item()";
+          };
+          window = {
+            completion.border = "rounded";
+            documentation.border = "rounded";
+          };
+        };
+      };
       harpoon = {
         enable = true;
         enableTelescope = true;
@@ -64,12 +122,36 @@
       noice = {
         enable = true;
         settings = {
+          top_down = false;          
+          lsp = {
+            override = {
+            "vim.lsp.util.convert_input_to_markdown_lines" = true;
+            "vim.lsp.util.stylize_markdown" = true;
+            "cmp.entry.get_documentation" = true;
+            };
+          };
+          views = {
+            cmdline_popup = {
+              position = {
+                row = "40%";
+                col = "50" ;
+              };
+            };
+          };
           presets = {
             bottom_search = false; # Setting this to false keeps search in the middle
             command_palette = true; # Centered HUD style
             long_message_to_split = true;
           };
-          # This is the "Secret Sauce" to center the bar
+          routes = [
+            {
+              filter = {event = "msg_show" ; kind = ""; find = "written";};
+              opts = {skip = true; } ;
+            }
+          ];
+        };
+      };
+        # This is the "Secret Sauce" to center the bar
           views = {
             cmdline_popup = {
               position = {
@@ -95,10 +177,10 @@
                 style = "rounded";
                 padding = [ 0 1 ];
               };
-            };
           };
         };
-      }; 
+      };
+    }; 
 
       mini = {
       enable = true;
@@ -117,7 +199,7 @@
         servers = {
           nil_ls.enable = true;
           lua_ls.enable = true;
-          python_ls.enable = true;
+          pyright.enable = true;
         };
       };
     };
@@ -131,6 +213,7 @@
 
 
     keymaps = [
+      { mode = "n"; key = "<leader>nh"; action = ":noh";}
       { mode = "n"; key = "<leader>it"; action = ":lua ToggleTabLine()<CR>"; }
       { mode = "n"; key = "<leader>a"; action = ''<cmd>lua require("harpoon"):list():add()<cr>''; options.desc = "Harpoon: Add file"; }
       { mode = "n"; key = "<C-e>"; action = ''<cmd>lua local harpoon = require("harpoon"); harpoon.ui:toggle_quick_menu(harpoon:list())<cr>''; options.desc = "Harpoon: Quick Menu"; }
@@ -140,6 +223,8 @@
       { mode = "n"; key = "<leader>fg"; action = ":Telescope live_grep<CR>"; options.desc = "Live Grep"; } 
       { mode = "n"; key = "<leader>fo"; action = ":Telescope oldfiles<CR>"; options.desc = "Recent Files"; }
       { mode = "n"; key = "<leader>fc"; action = ":Telescope grep_string<CR>"; options.desc = "Find word under cursor"; }
+      { mode = "n"; key = "<leader>fn"; action = "<cmd>Telescope noice<CR>"; options.desc = "Find Notifications (Noice)"; }
+      { mode = "n"; key = "<leader>nd"; action = "<cmd>NoiceDismiss<CR>"; options.desc = "Dismiss Noice Message"; }
     ];  
   };
 }
