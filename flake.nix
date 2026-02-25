@@ -27,7 +27,7 @@
 		users.nixos = { 
         import = [ 
             inputs.nixvim.homeManagerModules.nixvim
-            ./home.nix;
+            ./home.nix
             ];
           };
 		backupFileExtension = "backup";
