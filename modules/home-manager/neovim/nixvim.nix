@@ -32,6 +32,8 @@
         enableTelescope = true;
       };
 
+      notify.enable = true;
+
       noice = {
         enable = true;
         settings.presets = {
@@ -41,6 +43,11 @@
         };
       };
       
+      mini = {
+      enable = true;
+      modules.icons = {};
+      mockDevIcons = true;
+      }
       # Transparency built-in
       transparent = {
         enable = true;
