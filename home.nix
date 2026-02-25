@@ -39,4 +39,4 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
     };
-};
+}
