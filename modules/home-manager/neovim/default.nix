@@ -44,7 +44,7 @@
 				"Constant",
 				"Special",
 				"Identifier",
-				"Statement,
+				"Statement",
 				"PreProc",
 				"Underlined",
 				"Todo",
