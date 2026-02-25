@@ -63,7 +63,7 @@
 				},
 			extra_groups = {
 				"NormalFloat",
-				"NvimTreeNorma1,
+				"NvimTreeNorma1",
 				"NvimTreeNorma1NC",
 				"NvimTreeNorma1F10at",
 				"NvimTreeEndOfBuffer",
