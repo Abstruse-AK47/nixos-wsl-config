@@ -53,7 +53,7 @@
           nil_ls.enable = true;
           lua_ls.enable = true;
           python_ls.enable = true;
-        }
+        };
       };
     };
 
