@@ -18,17 +18,22 @@
       modules = [
         nixos-wsl.nixosModules.default
         ./configuration.nix # Points to your local config
-	home-manager.nixosModules.home-manager
+	      home-manager.nixosModules.home-manager
 	{
 	   home-manager = {
 	   	useGlobalPkgs = true;
 		useUserPackages = true;
 		extraSpecialArgs = { inherit inputs; };
-		users.nixos = import ./home.nix;
+		users.nixos = { 
+        import = [ 
+            inputs.nixvim.homeManagerModules.nixvim
+            ./home.nix;
+            ];
+          };
 		backupFileExtension = "backup";
-	   };
-	}
-      ];
-    };
+	    };
+	    }
+    ];
+   };
   };
 }
