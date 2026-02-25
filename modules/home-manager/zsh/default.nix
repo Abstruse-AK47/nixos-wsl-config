@@ -9,6 +9,7 @@
 	    syntaxHighlighting.enable = true;
 	    autocd = true;
 	
+	    
 	    shellAliases = {
 	      rebuild = "sudo nixos-rebuild switch --flake .";
 	      flake = "nix flake update";
@@ -28,18 +29,7 @@
 	            file = "share/fzf-tab/fzf-tab.plugin.zsh";
 	          }
 	        ];
-	   # plugins = [
-	   #  {
-	   #    name = "fzf-tab";
-	   #    # src = pkgs.fetchFromGitHub {
-	   #    #   owner = "Aloxaf";
-	   #    #   repo = "fzf-tab";
-	   #    #   rev = "v1.1.2"; # Check for the latest version
-	   #    #   sha256 = "sha256-Qv8zAiMtrr67CbLRrFjGaPzFZcOiMVEFLg1Z+N6VMhg=";
-	   #    # };
-	   #    src = inputs.fzf-tab;
-	   #  }
-	  # ];
+
     	   initContent = ''
     	      # disable sort when completing `git checkout`
     	      zstyle ':completion:*:git-checkout:*' sort false
@@ -57,6 +47,9 @@
     	     
     	     # # preview directory's content with eza when completing cd
     	     zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+
+	     export EDITOR = "nvim"
+	     export VISUAL = "nvim"
     	   '';
 	};
 	
