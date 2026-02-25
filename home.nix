@@ -7,7 +7,7 @@
 		./modules/home-manager/fzf/default.nix
 		./modules/home-manager/git/default.nix
 		./modules/home-manager/tmux/default.nix
-		./modules/home-manager/neovim/default.nix
+		./modules/home-manager/neovim/nixvim.nix
 		];
 	home.username="nixos";
 	home.homeDirectory = "/home/nixos";
