@@ -25,16 +25,16 @@
 	      home-manager.nixosModules.home-manager
 	{
 	   home-manager = {
-	   	useGlobalPkgs = true;
-		useUserPackages = true;
-		extraSpecialArgs = { inherit inputs; };
-		users.nixos = { 
-        import = [ 
-            inputs.nixvim.homeManagerModules.nixvim
-            ./home.nix
-            ];
-          };
-		backupFileExtension = "backup";
+	   	  useGlobalPkgs = true;
+		    useUserPackages = true;
+		    extraSpecialArgs = { inherit inputs; };
+		    users.nixos = { 
+            import = [ 
+                inputs.nixvim.homeModules.nixvim
+                ./home.nix
+                ];
+              };
+		    backupFileExtension = "backup";
 	    };
 	    }
     ];
