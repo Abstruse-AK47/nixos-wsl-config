@@ -6,6 +6,8 @@
     enable = true;
     defaultEditor = true;
 
+    globals.mapleader = " ";
+
     # Options (replaces your vim.opt)
     opts = {
       number = true;
@@ -15,7 +17,7 @@
       expandtab = true;
       clipboard = "unnamedplus";
       cmdheight = 0;
-      laststatus = 0; 
+      laststatus = 0;
     };
 
     # Plugins (NixVim handles the setups automatically)
