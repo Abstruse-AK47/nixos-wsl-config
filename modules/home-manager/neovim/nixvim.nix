@@ -1,4 +1,4 @@
-{configs,pkgs, inputs, ... }: 
+{configs,pkgs,helpers, inputs, ... }: 
 
 {
   # This replaces your old programs.neovim block
@@ -29,7 +29,7 @@
       nvim-autopairs.enable = true;
       indent-blankline.enable = true;
       tmux-navigator.enable = true;
-
+      luasnip.enable = true;
 
       treesitter = {
           enable = true;
