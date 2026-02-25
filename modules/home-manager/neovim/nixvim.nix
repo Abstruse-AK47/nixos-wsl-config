@@ -27,7 +27,34 @@
       nvim-autopairs.enable = true;
       indent-blankline.enable = true;
       tmux-navigator.enable = true;
-      telescope.enable = true;
+      telescope = {
+        enable = true;
+        
+        # 1. Enable FZF extension
+        extensions.fzf-native.enable = true;
+      
+        # 2. Configure Key Mappings and FZF behavior
+        settings = {
+          defaults = {
+            # Use Ctrl+j and Ctrl+k to navigate the results list
+            mappings = {
+              i = {
+                "<C-j>" = "move_selection_next";
+                "<C-k>" = "move_selection_previous";
+              };
+              n = {
+                "j" = "move_selection_next";
+                "k" = "move_selection_previous";
+              };
+            };
+          };
+          
+          # Explicitly load FZF as the picker
+          pickers = {
+            find_files.theme = "dropdown"; # Optional: makes it look even more minimal
+          };
+        };
+      };
 
       harpoon = {
         enable = true;
