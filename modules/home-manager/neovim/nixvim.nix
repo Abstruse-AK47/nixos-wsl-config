@@ -47,7 +47,7 @@
       enable = true;
       modules.icons = {};
       mockDevIcons = true;
-      }
+      };
       # Transparency built-in
       transparent = {
         enable = true;
