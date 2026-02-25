@@ -25,6 +25,7 @@
       nvim-autopairs.enable = true;
       indent-blankline.enable = true;
       tmux-navigator.enable = true;
+      telescope.enable = true;
 
       harpoon = {
         enable = true;
