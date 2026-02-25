@@ -12,7 +12,7 @@
 	home.username="nixos";
 	home.homeDirectory = "/home/nixos";
 	home.stateVersion = "25.05";
-  	home.packages = with pkgs; [
+  home.packages = with pkgs; [
 		git 
 		cudaPackages.cudatoolkit
 		wget
@@ -32,6 +32,10 @@
 	    nix-search-tv
 	  ];
 	  text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
-	}		)
+	})
 	];
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
 }
