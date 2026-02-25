@@ -1,4 +1,4 @@
-{ configs, pkgs, config, inputs, ... }: 
+{ config, ... }: 
 
 {
   programs.nixvim = {
@@ -38,6 +38,19 @@
           window = {
             completion.border = "rounded";
             documentation.border = "rounded";
+          };
+        };
+        cmdline = {
+          "/" = {
+            mapping = config.lib.nixvim.mkRaw "cmp.mapping.preset.cmdline()";
+            sources = [ { name = "buffer"; } ];
+          };
+          ":" = {
+            mapping = config.lib.nixvim.mkRaw "cmp.mapping.preset.cmdline()";
+            sources = [
+              { name = "path"; }
+              { name = "cmdline"; }
+            ];
           };
         };
       };
@@ -104,6 +117,8 @@
               position = { row = "53%"; col = "50%"; };
               size = { width = 60; height = 10; };
               border = { style = "rounded"; padding = [ 0 1 ]; };
+              enabled = true;
+              backend = "nui";
             };
           };
         };
