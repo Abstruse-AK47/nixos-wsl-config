@@ -15,17 +15,60 @@
 
  		# Write your config directly in Nix (for small configs)
  		initLua = ''
- 		  vim.g.mapleader = " "
+		  local opt = vim.opt
+		  local g = vim.g
+ 		  g.mapleader = " "
 			
-		  vim.opt.clipboard = "unnamedplus"
-		  vim.opt.cmdheight = 0
-		  vim.opt.wildmenu = true
+		  opt.clipboard = "unnamedplus"
+		  opt.cmdheight = 0
+		  opt.wildmenu = true
+		  opt.relativenumber = true
+		  opt.number = true
+		  opt.tabstop = 2
+		  opt.shiftwidth = 2
+		  opt.expandtab = true
+		  opt.autoindent = true
+		  opt.ignorecase = true
+		  opt.smartcase = true
+		  opt.cursorline = true
+
+		  opt.fillchars:append({eob = " "})
 		  
 		  vim.api.nvim_set_keymap("n", "<leader>il", ":lua ToggelStatusLine()<CR>", {noremap = true, silent = true})
 
 		  require("transparent").setup({
-    		  extra_groups = { "NvimTreeNormal", "LspFloatWinNormal" }, 
-  		  })
+			  groups = {
+				"Normal",
+				"NormalNC",
+				"Comment",
+				"Constant",
+				"Special",
+				"Identifier",
+				"Statement,
+				"PreProc",
+				"Underlined",
+				"Todo",
+				"String"
+				"Function",
+				"Conditional",
+				"Repeat",
+				"Operator",
+				"Structure",
+				"LineNr",
+				"NonText",
+				"SignCoIumn",
+				"CursorLineNr",
+				"EndOfBuffer",
+				"CursorLine",
+				},
+			extra_groups = {
+				"NormalFloat",
+				"NvimTreeNorma1,
+				"NvimTreeNorma1NC",
+				"NvimTreeNorma1F10at",
+				"NvimTreeEndOfBuffer",
+				},
+			})
 
 		  function ToggleTabLine()
 		  	if vim.o.showtabline == 0 then
@@ -39,3 +82,4 @@
 	};
 
 }
+
