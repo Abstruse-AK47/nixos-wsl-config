@@ -1,4 +1,4 @@
-{ configs, pkgs, helpers, inputs, ... }: 
+{ configs, pkgs, inputs, ... }: 
 
 {
   programs.nixvim = {
@@ -29,12 +29,11 @@
             { name = "buffer"; }
             { name = "cmdline"; }
           ];
-          # Fixed: using helpers.mkRaw to ensure Lua functions execute correctly
           mapping = {
-            "<C-Space>" = helpers.mkRaw "cmp.mapping.complete()";
-            "<Tab>" = helpers.mkRaw "cmp.mapping.confirm({ select = true })";
-            "<C-j>" = helpers.mkRaw "cmp.mapping.select_next_item()";
-            "<C-k>" = helpers.mkRaw "cmp.mapping.select_prev_item()";
+            "<C-Space>" = config.lib.nixvim.mkRaw "cmp.mapping.complete()";
+            "<Tab>" = config.lib.nixvim.mkRaw "cmp.mapping.confirm({ select = true })";
+            "<C-j>" = config.lib.nixvim.mkRaw "cmp.mapping.select_next_item()";
+            "<C-k>" = config.lib.nixvim.mkRaw "cmp.mapping.select_prev_item()";
           };
           window = {
             completion.border = "rounded";
@@ -113,8 +112,14 @@
       # Notification base
       notify = {
         enable = true;
-        backgroundColour = "#000000";
-      };
+        settings = {
+          background_colour = "#000000"; # Renamed and moved inside settings
+          fps = 60;
+          render = "minimal";
+          stages = "fade";
+          timeout = 2000;
+        };
+      };      
 
       # Quality of Life
       nvim-autopairs.enable = true;
