@@ -14,7 +14,7 @@
  		];
 
  		# Write your config directly in Nix (for small configs)
- 		extraLuaConfig = ''
+ 		initLua = ''
  		  vim.g.mapleader = " "
 			
 		  vim.opt.clipboard = "unnamedplus"
