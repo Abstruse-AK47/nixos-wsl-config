@@ -1,19 +1,5 @@
 {config,inputs, pkgs, ... }:
 
-# let
-#   # Define the custom plugin locally in this file
-#   tmux-fzf-url = pkgs.tmuxPlugins.mkTmuxPlugin {
-#     pluginName = "tmux-fzf-url";
-#     version = "v1.4.13";
-#     # src = pkgs.fetchFromGitHub {
-#     #   owner = "alberti42";
-#     #   repo = "tmux-fzf-links";
-#     #   rev = "v1.4.13";
-#     #   sha256 = "sha256-UgJa7I9AmrOdtK1RDIbdBfHl7OU5Cmx51wncWRPml18="; 
-#     # };
-#     src = inputs.tmux-fzf-url; 
-#   };
-# in
 {
   programs.tmux = {
     enable = true;
@@ -91,10 +77,6 @@
           resurrect
           continuum
 	  onedark-theme
-          # {
-          #   plugin = themepack;
-          #   extraConfig = "set -g @themepack 'powerline/default/cyan'"; # Choose your theme here
-          # }
           {
             plugin = tmux-sessionx;
             extraConfig = ''
