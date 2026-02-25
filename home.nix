@@ -26,6 +26,7 @@
 		wl-clipboard
 		wslu
     ripgrep
+    lazygit
 	(pkgs.writeShellApplication {
 	  name = "ns";
 	  runtimeInputs = with pkgs; [
