@@ -68,7 +68,7 @@
         extensions = {
           fzf-native.enable = true;
           noice.enable = true;
-        }
+        };
         
         # 2. Configure Key Mappings and FZF behavior
         settings = {

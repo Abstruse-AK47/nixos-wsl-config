@@ -67,9 +67,6 @@
       set -g renumber-windows on 
       
       set -sg escape-time 10
-
-   
-
     '';
 
     plugins = with pkgs.tmuxPlugins; [
