@@ -48,8 +48,6 @@
     	     # # preview directory's content with eza when completing cd
     	     zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 
-	     export EDITOR = "nvim"
-	     export VISUAL = "nvim"
     	   '';
 	};
 	
