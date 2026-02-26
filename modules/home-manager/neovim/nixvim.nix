@@ -55,6 +55,29 @@
         };
       };
 
+      gitsigns = {
+        enable = true;
+        settings = {
+          # Minimalist signs: + for add, ~ for change, - for delete
+          signs = {
+            add = { text = "┃"; };
+            change = { text = "┃"; };
+            delete = { text = " "; };
+            topdelete = { text = "▔"; };
+            changedelete = { text = "~"; };
+            untracked = { text = "┆"; };
+          };
+          # This ensures the signs don't look weird with your transparent background
+          signcolumn = true;
+          numhl = false; # Set to true if you want the line numbers to change color
+          linehl = false;
+          word_diff = false;
+          watch_gitdir = {
+            follow_files = true;
+          };
+        };
+      };
+
       # Completion Helpers
       cmp-nvim-lsp.enable = true;
       cmp-path.enable = true;
@@ -202,6 +225,9 @@
       { mode = "n"; key = "<leader>fc"; action = ":Telescope grep_string<CR>"; options.desc = "Find word under cursor"; }
       { mode = "n"; key = "<leader>fn"; action = "<cmd>Telescope noice<CR>"; options.desc = "Find Notifications (Noice)"; }
       { mode = "n"; key = "<leader>nd"; action = "<cmd>NoiceDismiss<CR>"; options.desc = "Dismiss Noice Message"; }
+      { mode = "n"; key = "]c"; action = "<cmd>lua require('gitsigns').next_hunk()<CR>"; options.desc = "Next Git Hunk"; }
+      { mode = "n"; key = "[c"; action = "<cmd>lua require('gitsigns').prev_hunk()<CR>"; options.desc = "Previous Git Hunk"; }
+      { mode = "n"; key = "<leader>gp"; action = "<cmd>lua require('gitsigns').preview_hunk()<CR>"; options.desc = "Preview Git Hunk"; }
     ];  
   };
 }
