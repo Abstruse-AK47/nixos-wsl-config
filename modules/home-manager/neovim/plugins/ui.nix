@@ -11,11 +11,11 @@
     ];
 
     # 3. Optional: Refine the look (transparency & HUD)
-    # extraConfigLua = ''
-    #   -- Nightfly specific settings
-    #   vim.g.nightflyTransparent = true
-    #   vim.g.nightflyVirtualTextColor = true
-    #   '';    
+    extraConfigLua = ''
+      -- Nightfly specific settings
+      -- vim.g.nightflyTransparent = true
+      vim.g.nightflyVirtualTextColor = true
+      '';    
     plugins = {
       # UI & HUD
       noice = {
