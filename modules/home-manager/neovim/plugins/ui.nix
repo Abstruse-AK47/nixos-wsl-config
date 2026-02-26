@@ -7,7 +7,7 @@
 
     # 2. Add the actual plugin package
     extraPlugins = with pkgs.vimPlugins; [
-      vim-nightfly-guicolor
+      nightfly
     ];
 
     # 3. Optional: Refine the look (transparency & HUD)
@@ -15,7 +15,7 @@
       -- Nightfly specific settings
       vim.g.nightflyTransparent = true
       vim.g.nightflyVirtualTextColor = true
-    '';    
+      '';    
     plugins = {
       # UI & HUD
       noice = {
