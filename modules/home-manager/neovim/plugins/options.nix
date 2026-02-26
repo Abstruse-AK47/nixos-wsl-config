@@ -1,7 +1,7 @@
 { _ , ... }:
 
 {
-  program.nixvim= {
+  programs.nixvim= {
     opts = {
       number = true;
       relativenumber = true;
