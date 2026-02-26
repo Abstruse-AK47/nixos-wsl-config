@@ -12,7 +12,7 @@
     baseIndex = 1;
     escapeTime = 0;
     historyLimit = 10000000;
-    terminal = "tmux-256color:RGB";
+    terminal = "screen-256color:RGB";
 
     # Extra configuration 
     extraConfig = ''
