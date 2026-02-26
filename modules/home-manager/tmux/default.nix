@@ -12,21 +12,18 @@
     baseIndex = 1;
     escapeTime = 0;
     historyLimit = 10000000;
-    terminal = "screen-256color:RGB";
+    terminal = "screen-256color";
 
     # Extra configuration 
     extraConfig = ''
       # Set status bar colors
+      set -g status-position top
       set -g status-justify absolute-centre
       set -g status-style "bg=default"
-      set -g window-status-current-style "fg=black bg=white  "      
-      set -g status-style absolute-centre
-      set -g status-style "bg=default"
-      set -g status-fg white
-
-      bind b set -g status
-
-      set -g renumber-windows on
+      set -g window-status-current-style "fg=black bg=white  "
+      set -g status-interval 5
+      set -g status-left "#S"
+      set -g status-right ""
 
       # Enable continuum restores on tmux start
       set -g @continuum-restore 'on'
@@ -43,6 +40,8 @@
       bind -r h resize-pane -L 5
 
       bind -r m resize-pane -Z
+
+      bind r source-file "~/.config/tmux/tmux.conf"
 
       # Switch windows with Ctrl + number
       bind -n F1 select-window -t 1
@@ -61,8 +60,6 @@
       # Passthrough and Activity
       set -gq allow-passthrough on
       set -g visual-activity off
-
-      bind r source-file "~/.config/tmux/tmux.conf"
 
       # Environment updates
       set -ga update-environment TERM
@@ -96,7 +93,7 @@
       {
         plugin = fzf-tmux-url;
         extraConfig = ''   
-            set -g @urlview-key 'u'
+      set -g @urlview-key 'u'
             set -g @fzf-url-history-limit '100'
             set -g @fzf-url-fzf-options '-w 50% -h 50% --multi -0 --no-preview --no-border'
         '';
