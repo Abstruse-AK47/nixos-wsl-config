@@ -15,7 +15,6 @@
           ];
           mapping = {
             "<C-Space>" = config.lib.nixvim.mkRaw "cmp.mapping.complete()";
-            "<Tab>" = config.lib.nixvim.mkRaw "cmp.mapping.confirm({ select = true })";
             "<C-j>" = config.lib.nixvim.mkRaw "cmp.mapping.select_next_item()";
             "<C-k>" = config.lib.nixvim.mkRaw "cmp.mapping.select_prev_item()";
           };
