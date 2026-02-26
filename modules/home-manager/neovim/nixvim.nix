@@ -176,6 +176,7 @@
           "NvimTreeNormal" 
           "TelescopeNormal" 
           "TelescopeBorder"
+          "SignColumn"
         ];
       };
 
