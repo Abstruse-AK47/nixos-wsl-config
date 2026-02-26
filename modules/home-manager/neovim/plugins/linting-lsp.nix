@@ -12,6 +12,10 @@
             ruff.enable = true;
             shellcheck.enable = true;
             markdownlint.enable = true;
+            prettierd = {
+              enable = true;
+              disableTsServerFormatter = true;
+            };
           };
           formatting = {
             alejandra.enable = true;
