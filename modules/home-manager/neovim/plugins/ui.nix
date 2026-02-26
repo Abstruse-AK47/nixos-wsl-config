@@ -2,6 +2,17 @@
 
 {
   programs.nixvim = {
+    colorscheme = "nightfly";
+    
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-nightfly-guicolors
+    ];
+    
+    extraConfigLua = ''
+      -- Nightfly specific settings
+      vim.g.nightflyTransparent = true
+      vim.g.nightflyVirtualTextColor = true
+    '';
     plugins = {
       # UI & HUD
       noice = {
@@ -51,13 +62,41 @@
       # Transparent
       transparent = {
         enable = true;
-        settings.extra_groups = [ 
-          "NormalFloat" 
-          "NvimTreeNormal" 
-          "TelescopeNormal" 
-          "TelescopeBorder"
-          "SignColumn"
-        ];
+        settings = {
+          groups = [
+            "Normal"
+            "NormalNC"
+            "Comment"
+            "Constant"
+            "Special"
+            "Identifier"
+            "Statement"
+            "PreProc"
+            "Type"
+            "Underlined"
+            "Todo"
+            "String"
+            "Function"
+            "Conditional"
+            "Repeat"
+            "Operator"
+            "Structure"
+            "LineNr"
+            "NonText"
+            "SignColumn"
+            "CursorLineNr"
+            "EndOfBuffer"
+            "CursorLine"
+            "NightflyVisual"
+          ];
+          extra_groups = [
+            "NormalFloat"
+            "NvimTreeNormal"
+            "NvimTreeNormalNC"
+            "NvimTreeNormalFloat"
+            "NvimTreeEndOfBuffer"
+          ];
+        };
       };
     };
   };

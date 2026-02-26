@@ -23,6 +23,11 @@
       set -g window-status-current-style "fg=black bg=white  "
       set -g status-interval 5
       set -g status-right ""
+      set-window-option -g mode-style "fg=black,bg=cyan"
+
+      # If you want to change the color of the "search" results (when using / or ?)
+      set-window-option -g copy-mode-match-style "fg=black,bg=cyan"
+      set-window-option -g copy-mode-current-match-style "fg=black,bg=magenta"
 
       # Enable continuum restores on tmux start
       set -g @continuum-restore 'on'
