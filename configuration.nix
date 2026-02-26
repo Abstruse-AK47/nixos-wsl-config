@@ -1,19 +1,28 @@
-{config,lib,inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
   imports = [
-  	./modules/nixos/nvidia/default.nix
-	];
+    ./modules/nixos/nvidia/default.nix
+  ];
   # 1. WSL Specifics
-  wsl.enable = true;
-  wsl.defaultUser = "nixos"; 
-  wsl.useWindowsDriver = true;
+  wsl = {
+    enable = true;
+    defaultUser = "nixos"; 
+    useWindowsDriver = true;
+    wslConf.interop = {
+      enabled = true;
+      appendWindowsPath = true;
+    };
+    interop.register = false;
+  };
+
+
 
   systemd.services."status-check" = {
-  	script = "echo 'Systemd is running'";
-	wantedBy = [ "multi-user.target"] ;
-	};
+    script = "echo 'Systemd is running'";
+    wantedBy = [ "multi-user.target"] ;
+  };
 
 
 
@@ -24,7 +33,7 @@
   };
 
   programs.zsh.enable = true;
-  
+
 
   # zramSwap.enable = true;
   # zramSwap.memoryPercent = 50;
