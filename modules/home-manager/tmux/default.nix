@@ -22,7 +22,6 @@
       set -g status-style "bg=default"
       set -g window-status-current-style "fg=black bg=white  "
       set -g status-interval 5
-      set -g status-left "#S"
       set -g status-right ""
 
       # Enable continuum restores on tmux start
@@ -61,6 +60,9 @@
       set -gq allow-passthrough on
       set -g visual-activity off
 
+      set-option -g status off
+      bind-key T set-option -g status
+
       # Environment updates
       set -ga update-environment TERM
       set -ga update-environment TERM_PROGRAM
@@ -93,7 +95,7 @@
       {
         plugin = fzf-tmux-url;
         extraConfig = ''   
-      set -g @urlview-key 'u'
+            set -g @urlview-key 'u'
             set -g @fzf-url-history-limit '100'
             set -g @fzf-url-fzf-options '-w 50% -h 50% --multi -0 --no-preview --no-border'
         '';
