@@ -2,17 +2,20 @@
 
 {
   programs.nixvim = {
+    # 1. Tell NixVim to use Nightfly as the main colorscheme
     colorscheme = "nightfly";
-    
+
+    # 2. Add the actual plugin package
     extraPlugins = with pkgs.vimPlugins; [
-      vim-nightfly-guicolors
+      vim-nightfly-guicolor
     ];
-    
+
+    # 3. Optional: Refine the look (transparency & HUD)
     extraConfigLua = ''
       -- Nightfly specific settings
       vim.g.nightflyTransparent = true
       vim.g.nightflyVirtualTextColor = true
-    '';
+    '';    
     plugins = {
       # UI & HUD
       noice = {
