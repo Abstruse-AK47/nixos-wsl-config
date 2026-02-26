@@ -1,4 +1,4 @@
-{ _ , ...}:
+{ pkgs , ...}:
 
 {
   programs.nixvim = {
@@ -31,5 +31,8 @@
         enableTelescope = true;
       };
     };
+    extraPackages = with pkgs; [
+      tree-sitter
+    ];
   };
 }
