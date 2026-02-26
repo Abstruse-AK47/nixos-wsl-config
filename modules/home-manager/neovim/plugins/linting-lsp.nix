@@ -11,6 +11,7 @@
             statix.enable = true;
             ruff.enable = true;
             shellcheck.enable = true;
+            markdownlint.enable = true;
           };
           formatting = {
             alejandra.enable = true;
@@ -30,3 +31,4 @@
     };
   };
 }
+
