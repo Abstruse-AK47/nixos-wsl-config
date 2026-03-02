@@ -11,6 +11,7 @@
       clipboard = "unnamedplus";
       cmdheight = 0;
       laststatus = 0;
+      fillchars = "eob: ";
     };
     extraConfigLua = ''
         function ToggleTabLine()
