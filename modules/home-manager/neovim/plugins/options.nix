@@ -12,6 +12,9 @@
       cmdheight = 0;
       laststatus = 0;
       fillchars = "eob: ";
+      wrap = true;
+      linebreak = true;
+      breakindent = true;
     };
     extraConfigLua = ''
         function ToggleTabLine()
@@ -35,6 +38,8 @@
       { mode = "n"; key = "]c"; action = "<cmd>lua require('gitsigns').next_hunk()<CR>"; options.desc = "Next Git Hunk"; }
       { mode = "n"; key = "[c"; action = "<cmd>lua require('gitsigns').prev_hunk()<CR>"; options.desc = "Previous Git Hunk"; }
       { mode = "n"; key = "<leader>gp"; action = "<cmd>lua require('gitsigns').preview_hunk()<CR>"; options.desc = "Preview Git Hunk"; }
-    ];    
+      { mode = "n"; key = "j"; action = "gj"; }
+      { mode = "n"; key = "k"; action = "gk"; }
+    ];
   };
 }
