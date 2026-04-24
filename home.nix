@@ -1,4 +1,4 @@
-{config,pkgs,inputs, ...}:
+{pkgs, ...}:
 
 {
 
@@ -9,10 +9,11 @@
 		./modules/home-manager/tmux/default.nix
 		./modules/home-manager/neovim/nixvim.nix
 		];
-	home.username="nixos";
-	home.homeDirectory = "/home/nixos";
-	home.stateVersion = "25.05";
-  home.packages = with pkgs; [
+	home = {
+    username="nixos";
+	  homeDirectory = "/home/nixos";
+	  stateVersion = "25.05";
+    packages = with pkgs; [
 		git 
 		cudaPackages.cudatoolkit
 		wget
@@ -37,9 +38,10 @@
 	  text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
 	})
 	];
-
-  home.sessionVariables = {
+  sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
     };
+};
+
 }
