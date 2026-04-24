@@ -11,7 +11,12 @@
             statix.enable = true;
             ruff.enable = true;
             shellcheck.enable = true;
-            markdownlint.enable = true;
+            markdownlint = {
+              enable = true;
+              settings= {
+                extra_args = [ "--disable" "MD013"];
+              };
+            };
             prettierd = {
               enable = true;
               disableTsServerFormatter = true;
