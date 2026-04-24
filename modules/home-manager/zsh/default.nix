@@ -1,8 +1,9 @@
-{config,inputs,pkgs, ...}:
+{config,pkgs, ...}:
 
 {
 	# Main zsh config with plugins
-	programs.zsh = {
+	programs = {
+    zsh = {
 	    enable = true;
 	    enableCompletion = true;
 	    autosuggestion.enable = true;
@@ -54,7 +55,7 @@
 	};
 	
 	# Zoxide - cd with gps
-	programs.zoxide = {
+	zoxide = {
 		enable = true;
 		enableZshIntegration = true;
 		enableBashIntegration = true;
@@ -64,7 +65,7 @@
 		};
 	
 	# Atuin for better shell history managment
-	programs.atuin = {
+	atuin = {
 		enable = true;
 		enableBashIntegration = true;
 		enableZshIntegration = true;
@@ -78,7 +79,7 @@
 		};
 
 	# oh-my-posh for theme
-	programs.oh-my-posh = {
+	oh-my-posh = {
     	enable = true;
     	
     	
@@ -89,5 +90,6 @@
     	enableZshIntegration = true;
   	};
 
+};
 }
 
