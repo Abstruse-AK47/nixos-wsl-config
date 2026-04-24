@@ -25,7 +25,6 @@
 		bat
 		xdg-utils
 		wl-clipboard
-		wslu
     ripgrep
     lazygit
     fd
