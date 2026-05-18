@@ -1,6 +1,9 @@
-{ pkgs , ...}:
+{ pkgs , lib, ...}:
 
 {
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "transparent.nvim"
+  ];
   programs.nixvim = {
     # 1. Tell NixVim to use Nightfly as the main colorscheme
     colorscheme = "nightfly";
