@@ -28,6 +28,7 @@
     ripgrep
     lazygit
     fd
+    devenv
 	(pkgs.writeShellApplication {
 	  name = "ns";
 	  runtimeInputs = with pkgs; [
