@@ -17,6 +17,9 @@
 	      ll = "ls -l";
 	      z = "eza --icons=always -a --git";
 	      garbage = "nix-collect-garbage -d";
+        md = "mkdir -p";
+        help = "compgen -c | fzf | xargs man";
+        rd = "rmdir";
 	    };
 	
 	    history = {
