@@ -48,5 +48,8 @@
   # 5. Enable Flakes for future use
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+
+  nix.settings.trusted-users = ["root" "nixos"];
+
   system.stateVersion = "25.05"; # Keep this as the version you installed
 }
