@@ -1,4 +1,4 @@
-{ _ , ... }: 
+{ inputs, ... }: 
 
 {
 
@@ -15,6 +15,7 @@
     enable = true;
     defaultEditor = true;
     globals.mapleader = " ";
+    nixpkgs.source = inputs.nixpkgs;
  
   };
 }
