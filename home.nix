@@ -8,6 +8,7 @@
 		./modules/home-manager/git/default.nix
 		./modules/home-manager/tmux/default.nix
 		./modules/home-manager/neovim/nixvim.nix
+    ./modules/home-manager/direnv/direnv.nix
 		];
 	home = {
     username="nixos";
