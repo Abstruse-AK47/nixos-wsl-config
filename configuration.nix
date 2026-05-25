@@ -32,10 +32,25 @@
     shell = pkgs.zsh;
   };
 
-  programs.zsh.enable = true;
+  programs = {
+    zsh = {
+      enable = true;
+    };
+    nix-ld = {
+      enable = true;
+    };
+    nix-ld.libraries = with pkgs; [
+      stdenv.cc.cc.lib       # Fixes libstdc++.so.6 (NumPy)
+      zlib                   # Fixes libz.so.1
+      glib                   # Fixes libglib (OpenCV backend)
+      libGL                  # Fixes libGL graphics context rendering
+      ffmpeg_4               # Fixes libavcodec.so.58 video streams
+      cudaPackages.cudatoolkit # Provides libcufft.so.12 system-wide
+    ];
+  };
 
-
-
+  
+  
   # zramSwap.enable = true;
   # zramSwap.memoryPercent = 50;
   # zramSwap.algorithm = "zstd";
