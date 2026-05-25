@@ -30,6 +30,10 @@
     lazygit
     fd
     devenv
+    stdenv.cc.cc.lib
+    zlib
+    glib
+    libGL
 	(pkgs.writeShellApplication {
 	  name = "ns";
 	  runtimeInputs = with pkgs; [
