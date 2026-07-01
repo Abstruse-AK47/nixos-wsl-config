@@ -61,11 +61,12 @@
 
 
 
-  # 5. Enable Flakes for future use
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-
-  nix.settings.trusted-users = ["root" "nixos"];
+nix.settings = {
+  substituters = [ "https://nix-community.cachix.org" ];
+  trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+  experimental-features = [ "nix-command" "flakes" ];
+  trusted-users = ["root" "nixos"];
+};
 
   system.stateVersion = "25.05"; # Keep this as the version you installed
 }
