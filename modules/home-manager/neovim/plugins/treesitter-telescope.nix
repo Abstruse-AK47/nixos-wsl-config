@@ -18,9 +18,9 @@
       # Search & Navigation
       telescope = {
         enable = true;
+        enabledExtensions = ["noice"];
         extensions = {
           fzf-native.enable = true;
-          noice.enable = true;
         };
         settings.defaults.mappings.i = {
           "<C-j>" = "move_selection_next";
