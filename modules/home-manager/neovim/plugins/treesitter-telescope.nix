@@ -7,7 +7,7 @@
       treesitter = {
         enable = true;
         # nixGrammars = true;
-        nixvimInjected = true;
+        nixvimInjections = true;
         settings = {
           highlight.enable = true;
           indent.enable = true;
