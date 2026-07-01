@@ -9,7 +9,7 @@
 		./modules/home-manager/tmux/default.nix
 		./modules/home-manager/neovim/nixvim.nix
     ./modules/home-manager/direnv/default.nix
-    # ./modules/home-manager/ollama/default.nix
+    ./modules/home-manager/ollama/default.nix
 		];
 
 	home = {
