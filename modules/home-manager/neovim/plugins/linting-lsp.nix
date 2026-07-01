@@ -17,14 +17,13 @@
                 extra_args = [ "--disable" "MD013"];
               };
             };
+          };
+          formatting = {
+            alejandra.enable = true;
             prettierd = {
               enable = true;
               disableTsServerFormatter = true;
             };
-          };
-          formatting = {
-            alejandra.enable = true;
-            ruff.enable = true;
           };
         };
       };
@@ -35,6 +34,7 @@
           nil_ls.enable = true;
           lua_ls.enable = true;
           pyright.enable = true;
+          ruff.enable=true;
         };
       };
     };
