@@ -9,7 +9,6 @@
         sources = {
           diagnostics = {
             statix.enable = true;
-            shellcheck.enable = true;
             markdownlint = {
               enable = true;
               settings= {
@@ -34,6 +33,7 @@
           lua_ls.enable = true;
           pyright.enable = true;
           ruff.enable=true;
+          bashls.enable=true;
         };
       };
     };
