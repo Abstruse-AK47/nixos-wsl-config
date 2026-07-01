@@ -4,7 +4,6 @@
   programs.nixvim = {
     plugins = {  
       # Treesitter
-      treesitter.legacy.enable=false;
       treesitter = {
         enable = true;
         # nixGrammars = true;
